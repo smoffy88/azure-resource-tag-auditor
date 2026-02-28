@@ -22,3 +22,35 @@ To run this script, you will need:
 1. Clone this repository to your local machine:
    ```bash
    git clone https://github.com/smoffy88/azure-resource-tag-auditor.git
+
+2. Install the required Python Azure SDK packages:
+   ```bash
+   pip install azure-identity azure-mgmt-resource
+
+## Usage
+
+1. Open your terminal and log into Azure:
+   ```bash
+   az login
+
+* (Note: If your role requires Privileged Identity Management (PIM)) activation, ensure your role is active before running az login to secure a fresh token).
+
+2. Open app.py and update the subscription_id variable with your target Azure Subscription ID.
+
+3. Run the script:
+   ```bash
+   python app.py
+
+## Configuration
+
+By default, the script enforces the following mandatory tags:
+
+* customer
+
+* env
+
+* market
+
+* product
+
+To modify the compliance rules, update the mandatory_tags set inside the main() function of app.py.
